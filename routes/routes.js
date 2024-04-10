@@ -1,18 +1,9 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const router = express.Router();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-const conn = require('./db/conn')
-conn()
-
-
-const routes = require('./routes/routes')
-
-
-app.use('/', routes)
-
-app.listen(3000, function () {
-    console.log('Serve on na porta 3000')
+router.get('/', function (req, res) {
+    res.json({})
 })
+
+
+module.exports = router 
